@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Dodge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <div class="hud">
+        <div><span>Poäng</span><strong id="score">0</strong></div>
+        <div><span>Bästa poäng</span><strong id="best-score">0</strong></div>
+        <div><span>Högsta nivå</span><strong id="best-level">1</strong></div>
+        <div><span>Nivå</span><strong id="level">1</strong></div>
+        <div><span>Skott</span><strong id="ammo">0</strong></div>
+        <div><span>Sköld</span><strong id="shields">0</strong></div>
+        <div><span>Sköldtid</span><strong id="shield-time">0 s</strong></div>
+        <div><span>Liv</span><strong id="lives">3</strong></div>
+      </div>
+
+      <div class="level-progress" aria-label="Framsteg till nästa nivå">
+        <div class="level-progress-heading">
+          <span>Framsteg till nästa nivå</span>
+          <strong id="level-progress-value">0%</strong>
+        </div>
+        <div class="level-progress-track">
+          <div id="level-progress-bar" class="level-progress-bar"></div>
+        </div>
+      </div>
+
+      <canvas id="game" width="900" height="600" aria-label="Spelplan"></canvas>
+
+      <div class="info">
+        <p>Flytta med piltangenterna. Samla stjärnor, undvik asteroiderna.</p>
+        <p>Varje asteroid du skjuter sönder ger 1 poäng.</p>
+        <p>Linjen är ditt sikte från nivå 3.</p>
+        <p>Tryck Enter för att spela igen.</p>
+        <button id="copy-link" type="button">Kopiera spellänk</button>
+      </div>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>

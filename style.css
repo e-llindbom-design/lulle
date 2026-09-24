@@ -1,0 +1,148 @@
+:root {
+  --bg1: #090b1a;
+  --bg2: #171d34;
+  --panel: rgba(12, 18, 32, 0.82);
+  --text: #edf6ff;
+  --accent: #7ae3ff;
+  --gold: #ffd166;
+  --danger: #ff6b6b;
+  --success: #7ef29a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, var(--bg2), var(--bg1) 55%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-shell {
+  background: var(--panel);
+  border: 2px solid rgba(122, 227, 255, 0.3);
+  border-radius: 18px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+  padding: 18px;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-bottom: 12px;
+  padding: 0 12px;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.hud div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.hud span {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(122, 227, 255, 0.95);
+}
+
+.level-progress {
+  margin: 0 12px 14px;
+}
+
+.level-progress-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  color: #b2d6ff;
+  font-size: 0.9rem;
+}
+
+#level-progress-value {
+  color: var(--success);
+  text-shadow: 0 0 8px rgba(126, 242, 154, 0.95);
+}
+
+.level-progress-track {
+  height: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(126, 242, 154, 0.45);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.level-progress-bar {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #42d98a, #caff75);
+  box-shadow: 0 0 10px #42d98a, 0 0 22px rgba(126, 242, 154, 0.95);
+  transition: width 160ms ease-out;
+}
+
+#score,
+#best-score,
+#best-level,
+#level,
+#shields,
+#shield-time,
+#lives,
+#ammo {
+  color: #7ef29a;
+  text-shadow: 0 0 12px rgba(126, 242, 154, 0.9);
+  font-size: 1.6rem;
+}
+
+#ammo.low-ammo {
+  animation: low-ammo-flash 0.7s steps(2, start) infinite;
+  color: var(--danger);
+}
+
+@keyframes low-ammo-flash {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+canvas {
+  display: block;
+  margin-inline: auto;
+  width: min(90vw, 900px);
+  height: auto;
+  background: linear-gradient(to bottom, #081425 0%, #0e1a2d 50%, #162338 100%);
+  border-radius: 12px;
+  border: 2px solid rgba(122, 227, 255, 0.25);
+}
+
+.info {
+  margin-top: 12px;
+  text-align: center;
+  color: #d8ebff;
+  line-height: 1.4;
+}
+
+.info p {
+  margin: 4px 0;
+}
+
+#copy-link {
+  margin-top: 10px;
+  padding: 9px 14px;
+  border: 1px solid rgba(122, 227, 255, 0.6);
+  border-radius: 8px;
+  background: rgba(122, 227, 255, 0.12);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+#copy-link:hover {
+  background: rgba(122, 227, 255, 0.24);
+}
